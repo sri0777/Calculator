@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Isha Calculator</title>
+
+   
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1f1c2c,#928dab);
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.calculator{
+    background:#111;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.6);
+    width:320px;
+}
+
+.title{
+    text-align:center;
+    color:white;
+    margin-bottom:10px;
+    font-size:22px;
+}
+
+.display{
+    width:90%;
+    height:60px;
+    border:none;
+    outline:none;
+    text-align:right;
+    font-size:26px;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+button{
+    height:60px;
+    border:none;
+    border-radius:12px;
+    font-size:20px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+.num{
+    background:#2c2c2c;
+    color:white;
+}
+
+.operator{
+    background:#ff9500;
+    color:white;
+}
+
+.equal{
+    background:#34c759;
+    color:white;
+    grid-column: span 2;
+}
+
+.clear{
+    background:#ff3b30;
+    color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <input id="display" class="display" placeholder="Hujur isha..." readonly>
+
+        <div class="buttons">
+
+            <button class="clear" onclick="clearDisplay()">AC</button>
+            <button class="operator" onclick="append('%')">%</button>
+            <button class="operator" onclick="append('/')">➗</button>
+            <button class="operator" onclick="append('*')">✖️</button>
+
+            <button class="num" onclick="append('7')">7️⃣</button>
+            <button class="num" onclick="append('8')">8️⃣</button>
+            <button class="num" onclick="append('9')">9️⃣</button>
+            <button class="operator" onclick="append('-')">➖</button>
+
+            <button class="num" onclick="append('4')">4️⃣</button>
+            <button class="num" onclick="append('5')">5️⃣</button>
+            <button class="num" onclick="append('6')">6️⃣</button>
+            <button class="operator" onclick="append('+')">➕</button>
+
+            <button class="num" onclick="append('1')">1️⃣</button>
+            <button class="num" onclick="append('2')">2️⃣</button>
+            <button class="num" onclick="append('3')">3️⃣</button>
+            <button class="num" onclick="append('0')">0️⃣</button>
+
+            <button class="num" onclick="append('.')">🔘</button>
+            <button class="equal" onclick="calculate()">✅🎉😘</button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const display = document.getElementById("display")
+
+        function append(value) {
+            display.value += value
+        }
+
+        function clearDisplay() {
+            display.value = ""
+        }
+
+        function calculate() {
+            try {
+                display.value = eval(display.value)
+            }
+            catch {
+                display.value = "Error ❗"
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
