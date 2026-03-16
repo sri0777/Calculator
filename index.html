@@ -5,86 +5,102 @@
     <meta charset="UTF-8">
     <title>Isha Calculator</title>
 
-   
-<style>
-body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#1f1c2c,#928dab);
-    font-family:Arial, Helvetica, sans-serif;
-}
 
-.calculator{
-    background:#111;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.6);
-    width:320px;
-}
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-.title{
-    text-align:center;
-    color:white;
-    margin-bottom:10px;
-    font-size:22px;
-}
+        .calculator {
+            background: #111;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            width: 320px;
+        }
 
-.display{
-    width:90%;
-    height:60px;
-    border:none;
-    outline:none;
-    text-align:right;
-    font-size:26px;
-    padding:10px;
-    border-radius:10px;
-    margin-bottom:15px;
-}
+        .title {
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
 
-.buttons{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-}
+        .display {
+            width: 90%;
+            height: 60px;
+            border: none;
+            outline: none;
+            text-align: right;
+            font-size: 26px;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
 
-button{
-    height:60px;
-    border:none;
-    border-radius:12px;
-    font-size:20px;
-    cursor:pointer;
-    transition:0.2s;
-}
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
 
-button:hover{
-    transform:scale(1.08);
-}
+        button {
+            height: 60px;
+            border: none;
+            border-radius: 12px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
 
-.num{
-    background:#2c2c2c;
-    color:white;
-}
+        button:hover {
+            transform: scale(1.08);
+        }
 
-.operator{
-    background:#ff9500;
-    color:white;
-}
+        .num {
+            background: #2c2c2c;
+            color: white;
+        }
 
-.equal{
-    background:#34c759;
-    color:white;
-    grid-column: span 2;
-}
+        .operator {
+            background: #ff9500;
+            color: white;
+        }
 
-.clear{
-    background:#ff3b30;
-    color:white;
-}
+        .equal {
+            background: #34c759;
+            color: white;
+            grid-column: span 2;
+        }
 
-</style>
+        .clear {
+            background: #ff3b30;
+            color: white;
+        }
+
+        @media (max-width:480px) {
+            .calculator {
+                width: 90%;
+                padding: 18px;
+            }
+
+            button {
+                height: 65px;
+                font-size: 18px;
+            }
+
+            .display {
+                width: 95%;
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -116,7 +132,7 @@ button:hover{
             <button class="num" onclick="append('0')">0️⃣</button>
 
             <button class="num" onclick="append('.')">🔘</button>
-            <button class="equal" onclick="calculate()">✅🎉😘</button>
+            <button class="equal" onclick="calculate()">✅🎉</button>
 
         </div>
 
